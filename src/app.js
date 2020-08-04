@@ -51,6 +51,9 @@ module.exports = function ({domain = null, tenant, apikey}) {
 			}
 
 			return res.headers.get('content-type').includes('application/json') ? res.json() : res.arrayBuffer()
+		}).catch(async response => {
+			const error = await response.text().then(text => text) // find the error text and return it. 
+			return Promise.reject(error)
 		})
 	}
 
