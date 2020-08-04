@@ -34,8 +34,8 @@ const weclapp = require('@weclapp/connect')
 
     // Authenticate
     const config = {
-        username: 'max.aigner@redmedical.de',
-        apikey: '690700b5-62a2-48ff-845a-7ba38e3797cd',
+        username: 'YourEmail@mail.de',
+        apikey: '<YourAPIKeyHere>',
         
         // One of the following
         domain: 'crm.redicals.de', // Example: app.company.com
