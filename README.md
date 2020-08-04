@@ -32,20 +32,20 @@ $ yarn add @weclapp/connect
 ```js
 const weclapp = require('@weclapp/connect')
 
-(async () => {
-	
-	// Authenticate
-	const user = weclapp({
-		username: '<string>',
-		apikey: '<string>',
-		
-		// One of the following
-		tenant: '<string>', // Example: myapp
-		domain: '<string>', // Example: app.company.com
-	})
+    // Authenticate
+    const config = {
+        username: 'max.aigner@redmedical.de',
+        apikey: '690700b5-62a2-48ff-845a-7ba38e3797cd',
+        
+        // One of the following
+        domain: 'crm.redicals.de', // Example: app.company.com
+    };
 
-	// Prints the current user to the console
-	console.log(user)
+(async () => {
+    const user = new weclapp(config)
+    response = (await user.getCustomers( {fetch: user.fetch , page:1 , pageSize:1})).result
+    console.log("res: ", response);
+	
 })()
 ```
 
